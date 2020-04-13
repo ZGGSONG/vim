@@ -8,7 +8,7 @@ let mapleader=" "	"让空格键变成leader键
 syntax on		"代码高亮
 set number		"显示行号
 set ruler		"打开状态栏标尺
-set norelativenumber	"以当前行号向上下递加
+set relativenumber	"以当前行号向上下递加
 set cursorline		"强调当前行
 set wrap		"字不会超出窗体
 set showcmd		"显示cmd命令
@@ -72,19 +72,25 @@ map <LEADER><LEADER> <ESC>/<++><CR>:nohlsearch<CR>c4l
 "选中后按U即可转变大写
 inoremap <C-u> <esc>gUiwea
 
+nnoremap <silent> <c-p> :Files <CR>
 "插件
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'  "vim主题
+Plug 'w0ng/vim-hybrid'		"hybrid主题
 Plug 'iamcco/markdown-preview.vim'  "MarkDown语法预览插件
 Plug 'iamcco/mathjax-support-for-mkdp'  "预览数学公式插件
 Plug 'scrooloose/nerdtree'  "NERDTree
 Plug 'luochen1990/rainbow'  "彩虹括号插件
+Plug 'yianwillis/vimcdoc' "vim中文帮助文档
 Plug 'jiangmiao/auto-pairs' "自动括号补全
 Plug 'junegunn/vim-easy-align'  "符号对齐
 Plug 'mattn/emmet-vim'  "HTML拓展
 Plug 'mhinz/vim-startify' "启动页面美化
+Plug 'jceb/vim-orgmode'	"vim版的emacs org mode
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/indentLine'		"缩进线
 call plug#end()	
 
 "Airline配置
@@ -98,37 +104,8 @@ set t_Co=256
 "设置airline主题
 let g:airline_theme='bubblegum'
 "VIM主题配置
-colorscheme gruvbox
-set background=dark    " Setting dark mode
-
-"markdown插件使用
-let g:mkdp_path_to_chrome = "/usr/bin/google-chrome-stable"
-" 设置 chrome 浏览器的路径（或是启动 chrome（或其他现代浏览器）的命令）
-" 如果设置了该参数, g:mkdp_browserfunc 将被忽略
-let g:mkdp_browserfunc = 'MKDP_browserfunc_default'
-" vim 回调函数, 参数为要打开的 url
-let g:mkdp_auto_start = 1
-" 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开
-" markdown 文件的时候打开一次
-let g:mkdp_auto_open = 1
-" 设置为 1 在编辑 markdown 的时候检查预览窗口是否已经打开，否则自动打开预
-" 览窗口
-let g:mkdp_auto_close = 1
-" 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不
-" 自动关闭预览窗口
-let g:mkdp_refresh_slow = 0
-" 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时
-" 更新预览
-let g:mkdp_command_for_global = 0
-" 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown
-" 文件可以使用改命令
-let g:mkdp_open_to_the_world = 0
-" 设置为 1, 在使用的网络中的其他计算机也能访问预览页面
-" 默认只监听本地（127.0.0.1），其他计算机不能访问
-nmap <silent> <F8> <Plug>MarkdownPreview        " 普通模式
-imap <silent> <F8> <Plug>MarkdownPreview        " 插入模式
-nmap <silent> <C-F8> <Plug>StopMarkdownPreview    " 普通模式
-imap <silent> <C-F8> <Plug>StopMarkdownPreview    " 插入模式
+colorscheme hybrid
+set background=dark		" Setting dark mode
 
 "NERDTree配置
 "自动打开NERDTree
@@ -143,3 +120,9 @@ let NERDTreeShowLineNumbers=0
 let NERDTreeShowHidden=1
 " 显示书签列表
 let NERDTreeShowBookmarks=0
+
+"fzf
+" Empty value to disable preview window altogether
+let g:fzf_preview_window = ''
+" Always enable preview window on the right with 60% width
+let g:fzf_preview_window = 'right:60%'
