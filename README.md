@@ -2,7 +2,7 @@
 
 ## 预览
 
-![VIMRC](https://raw.githubusercontent.com/ZGGSONG/vim/master/vimrc_.png)
+![VIMRC](https://raw.githubusercontent.com/ZGGSONG/vim/master/vim.png)
 
 ## 个人编辑使用的vim配置文件
 
@@ -12,7 +12,7 @@
 
 [vim-airline/vim-airline-themes](https://github.com/)
 
-[morhetz/gruvbox](https://github.com/morhetz/gruvbox)
+[w0ng/vim-hybrid](https://github.com/w0ng/vim-hybrid)
 
 [iamcco/markdown-preview.vim](https://github.com/iamcco/markdown-preview.vim)
 
