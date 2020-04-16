@@ -56,6 +56,13 @@ vim
 ```
 ### Powerline字体
 
+<details>
+  <summary>这里提供一个我自己常用的nerd font（支持powerline）</summary>
+
+> [点击下载](https://cdn.jsdelivr.net/gh/ZGGSONG/vim/Droid%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.otf)
+
+</details>
+
 <b style="color:red">注意:airline主题需要[powerline字体](https://github.com/powerline/fonts)</b>
 
 ```
