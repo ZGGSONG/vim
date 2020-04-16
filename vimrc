@@ -1,9 +1,9 @@
-" _________  ____ ____   ___  _   _  ____    __     _____ __  __ 
-"|__  / ___|/ ___/ ___| / _ \| \ | |/ ___|   \ \   / /_ _|  \/  |
-"  / / |  _| |  _\___ \| | | |  \| | |  _ ____\ \ / / | || |\/| |
-" / /| |_| | |_| |___) | |_| | |\  | |_| |_____\ V /  | || |  | |
-"/____\____|\____|____/ \___/|_| \_|\____|      \_/  |___|_|  |_|
-
+"
+"   _____      _(_)
+"  / __\ \ /\ / / |
+"  \__ \\ V  V /| |
+"  |___/ \_/\_/_/ |
+"             |__/
 let mapleader=" "	"让空格键变成leader键
 syntax on		"代码高亮
 set number		"显示行号
@@ -19,7 +19,7 @@ set incsearch		"边搜边高亮
 set ignorecase		"搜索忽略大小写	
 set smartcase		"智能大小写搜索
 set nocompatible
-set clipboard=unnamed   "终端下输入vim --version | grep clipboard，如果出现+clipboard则可以使用---与系统共享剪贴板
+set clipboard=unnamed   "终端下输入vim --version \| grep clipboard，如果出现+clipboard则可以使用---与系统共享剪贴板
 filetype on		"识别不同的文件格式
 filetype indent on
 filetype plugin on
@@ -31,6 +31,9 @@ set scrolloff=5 "上下余留5行"
 set shiftwidth=2
 set softtabstop=2
 set backspace=indent,eol,start	"让光标可以由下一行退格到上一行末尾
+setlocal noswapfile	"不要生成swap文件，当buffer被丢弃的时候隐藏它
+set bufhidden=hide	"同上
+set autowrite		"自动保存
 
 noremap = nzz		"检索后查询高亮内容
 noremap - Nzz
@@ -127,3 +130,94 @@ let NERDTreeShowBookmarks=0
 let g:fzf_preview_window = ''
 " Always enable preview window on the right with 60% width
 let g:fzf_preview_window = 'right:60%'
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""新文件标题""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"新建.c,.h,.sh,.java文件，自动插入文件头 
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()" 
+""定义函数SetTitle，自动插入文件头 
+func SetTitle() 
+	"如果文件类型为.sh文件 
+	if &filetype == 'sh' 
+		call setline(1,"\#!/bin/bash") 
+		call append(line("."), "") 
+    elseif &filetype == 'python'
+        call setline(1,"#!/usr/bin/env python")
+        call append(line("."),"# coding=utf-8")
+	    call append(line(".")+1, "") 
+
+    elseif &filetype == 'ruby'
+        call setline(1,"#!/usr/bin/env ruby")
+        call append(line("."),"# encoding: utf-8")
+	    call append(line(".")+1, "")
+
+"    elseif &filetype == 'mkd'
+"        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
+	else 
+		call setline(1, "/*************************************************************************") 
+		call append(line("."), "	> File Name: ".expand("%")) 
+		call append(line(".")+1, "	> Author: ".expand("SWJ")) 
+		call append(line(".")+2, "	> Mail: ".expand("zggsong@foxmail.com")) 
+		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
+		call append(line(".")+4, " ************************************************************************/") 
+		call append(line(".")+5, "")
+	endif
+	if expand("%:e") == 'cpp'
+		call append(line(".")+6, "#include<iostream>")
+		call append(line(".")+7, "using namespace std;")
+		call append(line(".")+8, "")
+	endif
+	if &filetype == 'c'
+		call append(line(".")+6, "#include<stdio.h>")
+		call append(line(".")+7, "")
+	endif
+	if expand("%:e") == 'h'
+		call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
+		call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
+		call append(line(".")+8, "#endif")
+	endif
+	if &filetype == 'java'
+		call append(line(".")+6,"public class ".expand("%:r"))
+		call append(line(".")+7,"")
+	endif
+	"新建文件后，自动定位到文件末尾
+endfunc 
+autocmd BufNewFile * normal G
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""C,C++,java,python按F5编译运行"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+	exec "w"
+	if &filetype == 'c'
+		exec "!gcc % -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'cpp'
+		exec "!g++ % -std=c++11 -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'java' 
+		exec "!javac %" 
+		exec "!time java %<"
+	elseif &filetype == 'sh'
+		:!time bash %
+	elseif &filetype == 'python'
+		exec "!time python2.7 %"
+    elseif &filetype == 'html'
+        exec "!firefox % &"
+    elseif &filetype == 'go'
+"        exec "!go build %<"
+        exec "!time go run %"
+    elseif &filetype == 'mkd'
+        exec "!~/.vim/markdown.pl % > %.html &"
+        exec "!firefox %.html &"
+	endif
+endfunc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
