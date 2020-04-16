@@ -91,6 +91,7 @@ Plug 'jceb/vim-orgmode'	"vim版的emacs org mode
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'		"缩进线
+Plug 'itchyny/vim-cursorword'	"相同的单词高亮
 call plug#end()	
 
 "Airline配置
