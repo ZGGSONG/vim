@@ -38,23 +38,11 @@
 sudo apt install vim curl git
 ```
 
-### 脚本
-
-```
-wget https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install && chmod +x install && ./install
-
-```
-
-### 下载[vim-plug](https://github.com/junegunn/vim-plug)
-
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://cdn.jsdelivr.net/gh/junegunn/vim-plug@master/plug.vim
-```
 ### 下载
+
 ```
-curl -fLo ~/.vimrc --create-dirs \
-    https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/vimrc
+curl -fLo https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install && chmod +x install && ./install
+
 ```
 
 

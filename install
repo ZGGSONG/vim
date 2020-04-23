@@ -10,3 +10,9 @@ curl -fLo ~/.vimrc --create-dirs \
 echo "installed vimrc"
 
 rm install
+
+vim ~/.vimrc 
+
+echo  "\n"
+
+:PlugInstall
