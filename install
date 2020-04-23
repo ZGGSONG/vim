@@ -8,3 +8,5 @@ curl -fLo ~/.vimrc --create-dirs \
     https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/vimrc
 
 echo "installed vimrc"
+
+rm install

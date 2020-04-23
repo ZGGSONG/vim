@@ -27,6 +27,17 @@
 ## 使用此VIMRC
 
 > 已使用jsdelivr—-CDN加速，国内速度很快
+
+### 准备
+- 安装vim
+- 安装curl
+- 安装git
+
+> 以ubuntu为例
+```
+sudo apt install vim curl git
+```
+
 ### 脚本
 
 ```
