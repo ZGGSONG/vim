@@ -27,6 +27,12 @@
 ## 使用此VIMRC
 
 > 已使用jsdelivr—-CDN加速，国内速度很快
+### 脚本
+
+```
+wget install.sh https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install && chmod +x install.sh && ./install.sh
+
+```
 
 ### 下载[vim-plug](https://github.com/junegunn/vim-plug)
 
