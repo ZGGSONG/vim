@@ -30,7 +30,7 @@
 ### 脚本
 
 ```
-wget install.sh https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install && chmod +x install.sh && ./install.sh
+wget https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install && chmod +x install && ./install
 
 ```
 
