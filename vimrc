@@ -81,11 +81,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0ng/vim-hybrid'		"hybrid主题
-Plug 'iamcco/markdown-preview.vim'  "MarkDown语法预览插件
-Plug 'iamcco/mathjax-support-for-mkdp'  "预览数学公式插件
 Plug 'scrooloose/nerdtree'  "NERDTree
 Plug 'luochen1990/rainbow'  "彩虹括号插件
-Plug 'yianwillis/vimcdoc' "vim中文帮助文档
 Plug 'jiangmiao/auto-pairs' "自动括号补全
 Plug 'junegunn/vim-easy-align'  "符号对齐
 Plug 'mattn/emmet-vim'  "HTML拓展
@@ -220,4 +217,5 @@ func! CompileRunGcc()
 	endif
 endfunc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
