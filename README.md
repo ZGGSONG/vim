@@ -41,7 +41,7 @@ sudo apt install vim curl git
 ### 下载
 
 ```
-curl -fLo https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install && chmod +x install && ./install
+curl -fLo install https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install && chmod +x install && ./install
 
 ```
 
