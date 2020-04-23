@@ -81,28 +81,4 @@ rm -rf fonts
 
 </details>
 
-
-
-> 如果没有安装`curl`请安装`curl`
-> > ubuntu:`sudo apt install curl`
-> > manjaro:`sudo pacman -S curl`
-
-### 修改此VIM
-
-- 使用vim编辑进入.vimrc配置文件
-
-```
-vim ~/.vimrc  #编辑vimrc文件
-```
-### 修改CAPSLOOKS为ESC
-
-```
-vim ~/.profile
-
-#粘贴如下内容
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-
-source ~/.profile
-```
-
 ## 使用愉快
