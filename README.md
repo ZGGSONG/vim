@@ -6,24 +6,26 @@
 
 ## 个人编辑使用的vim配置文件
 
-包括各类日常使用快捷键及常用部分插件：
-
-[vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
-
-[vim-airline/vim-airline-themes](https://github.com/)
-
-[w0ng/vim-hybrid](https://github.com/w0ng/vim-hybrid)
-
-[iamcco/markdown-preview.vim](https://github.com/iamcco/markdown-preview.vim)
-
-[iamcco/mathjax-support-for-mkdp](https://github.com/iamcco/mathjax-support-for-mkdp)[
-
-[scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
-
-[luochen1990/rainbow](https://github.com/luochen1990/rainbow)
-
-[yianwillis/vimcdoc](https://github.com/yianwillis/vimcdoc)
-
+使用插件：
+```
+vim-airline/vim-airline
+vim-airline/vim-airline-themes
+w0ng/vim-hybrid
+scrooloose/nerdtree
+ryanoasis/vim-devicons
+tiagofumo/vim-nerdtree-syntax-highlight
+luochen1990/rainbow
+jiangmiao/auto-pairs
+junegunn/vim-easy-align
+mattn/emmet-vim
+mhinz/vim-startify
+jceb/vim-orgmode
+junegunn/fzf{ 'do': { -> fzf#install() } }
+junegunn/fzf.vim
+Yggdroot/indentLine
+itchyny/vim-cursorword
+neoclide/coc.nvim{'branch': 'release'}
+```
 ## 使用此VIMRC
 
 > 已使用jsdelivr—-CDN加速，国内速度很快
