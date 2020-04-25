@@ -32,34 +32,43 @@
 - 安装vim
 - 安装curl
 - 安装git
-- __其中已经安装coc代码补全插件，需要手动安装`ccls`__
-
-> 以ubuntu为例
+- __其中已经安装coc代码补全插件，需要手动安装`nodejs`和``npm__
+-  以ubuntu为例
 ```
-sudo apt install vim curl git
+sudo apt install vim curl git nodejs
 ```
-
 ### 下载
-
 ```
 curl -fLo install.sh https://cdn.jsdelivr.net/gh/ZGGSONG/vim/install.sh && chmod +x install.sh && ./install.sh
-
 ```
-
-
-
 ### 使用
 ```
 vim
-
 :PlugInstall
 #完成更新
-
 :wq
-
 vim
 #畅快的使用vim
 ```
+- 更新cos对语言的支持
+	- 打开[coc.nvim_wiki](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
+	- 安装依赖
+	- 打开`vim`,输入`CocConfig`,将复制内容粘贴到`{}`中去，多个语言支持放入多个`{}`中去,并以`,`分开
+	- C语言安装`ccls`,
+	```
+	sudo apt install ccls    #ubuntu为例
+	#CocConfig
+	{
+	  "languageserver": {
+      "clangd": {
+          "command": "clangd",
+          "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+          "filetypes": ["c", "cpp", "objc", "objcpp"]
+          }
+       }
+    }
+	```
+
 ### Powerline字体
 
 <b style="color:red">注意:airline主题需要[powerline字体](https://github.com/powerline/fonts)</b>
@@ -82,4 +91,11 @@ rm -rf fonts
 
 </details>
 
+
+## 使用`neovim`
+
+```shell
+ln -s ~/.vim .config/nvim
+ln -s ~/.vimrc .config/nvim/init.vim
+```
 ## 使用愉快
