@@ -17,7 +17,7 @@ set wrap		"字不会超出窗体
 set showcmd		"显示cmd命令
 set wildmenu 		"命令行提示
 set hlsearch		"搜索高亮
-exec "nohlsearch"
+exec "nohlsearch"		
 set incsearch		"边搜边高亮
 set ignorecase		"搜索忽略大小写	
 set smartcase		"智能大小写搜索
@@ -39,11 +39,15 @@ set bufhidden=hide	"同上
 set autowrite		"自动保存
 
 "=============
-"自定义快捷键
+"=自定义快捷键
 "=============
 noremap = nzz		"检索后查询高亮内容
 noremap - Nzz
 noremap <LEADER><CR> :nohlsearch<CR> 	"空格加回车取消高亮
+noremap W 5w		"大写快速移动
+noremap B 5b		"大写快速移动
+noremap < <<		"取消缩进
+noremap > >>		"缩进
 map S :w<CR>			"大写S保存
 map Q :q<CR>			"大写Q退出
 map R :source $MYVIMRC<CR>	"重新加载
@@ -78,12 +82,10 @@ nmap <S-p> :bp<CR>
 "map tx :r !figlet 
 "placeholder
 map <LEADER><LEADER> <ESC>/<++><CR>:nohlsearch<CR>c4l
-"选中后按U即可转变大写
-inoremap <C-u> <esc>gUiwea
 
-"=============
-"	 Plug插件
-"=============
+"==============
+"===Plug插件===
+"==============
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -259,10 +261,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""新文件标题""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"===================
+"====新文件标题=====
+"===================
 "新建.c,.h,.sh,.java文件，自动插入文件头 
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()" 
 ""定义函数SetTitle，自动插入文件头 
@@ -313,12 +314,11 @@ func SetTitle()
 	"新建文件后，自动定位到文件末尾
 endfunc 
 autocmd BufNewFile * normal G
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""C,C++,java,python按F5编译运行"""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"===================================
+"===C,C++,java,python按F5编译运行===
+"===================================
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
@@ -345,4 +345,3 @@ func! CompileRunGcc()
         exec "!firefox %.html &"
 	endif
 endfunc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
