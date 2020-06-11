@@ -41,7 +41,7 @@ sudo apt install vim curl git nodejs
 ```
 ### 下载
 ```
-curl -fLo ~/.vimrc --create-dirs https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/vimrc
+curl -fLo ~/.vimrc --create-dirs https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/vim
 ```
 ### 使用
 ```
