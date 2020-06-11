@@ -8,7 +8,7 @@
 " === Auto load for first time uses
 " ===
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 				\ https://cdn.jsdelivr.net/gh/junegunn/vim-plug@master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
