@@ -44,6 +44,12 @@ sudo apt install vim curl git nodejs
 curl -fLo ~/.vimrc --create-dirs https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/vim
 ```
 ### 使用
+
+已使用自动化安装，curl完成打开`vim ~/.vimrc`即可
+
+
+<details>
+  <summary>若自动安装插件失败，看这里</summary>
 ```
 vim
 :PlugInstall
@@ -52,6 +58,7 @@ vim
 vim
 #畅快的使用vim
 ```
+</details>
 - 更新cos对语言的支持
 
 - 添加`coc`
