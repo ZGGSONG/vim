@@ -34,7 +34,7 @@ neoclide/coc.nvim{'branch': 'release'}
 - 安装vim
 - 安装curl
 - 安装git
-- __其中已经安装coc代码补全插件，需要手动安装`nodejs`和``npm__
+- __其中已经安装coc代码补全插件，需要手动安装`nodejs`和`npm`__
 -  以ubuntu为例
 ```
 sudo apt install vim curl git nodejs
