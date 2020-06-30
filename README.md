@@ -34,10 +34,9 @@ neoclide/coc.nvim{'branch': 'release'}
 - 安装vim
 - 安装curl
 - 安装git
-- __其中已经安装coc代码补全插件，需要手动安装`nodejs`和`npm`__
 -  以ubuntu为例
 ```
-sudo apt install vim curl git nodejs
+sudo apt install vim curl git
 ```
 ### 下载
 ```
@@ -66,6 +65,14 @@ curl -fLo ~/.vimrc --create-dirs https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/
 - 更新cos对语言的支持
 
 - 添加`coc`
+	- __需要手动安装`nodejs`和`npm`__
+	
+	```
+	#以ubuntu为例
+	sudo apt install nodejs
+
+	```
+
 <details>
   <summary>添加代码</summary>
   
