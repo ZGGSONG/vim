@@ -50,15 +50,19 @@ curl -fLo ~/.vimrc --create-dirs https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/
 
 <details>
   <summary>若自动安装插件失败，看这里</summary>
-```
-vim
-:PlugInstall
-#完成更新
-:wq
-vim
-#畅快的使用vim
-```
+
+  ```
+  vim
+  :PlugInstall
+  #完成更新
+  :wq
+  vim
+  #畅快的使用vim
+  ```
+
 </details>
+
+### 其他
 - 更新cos对语言的支持
 
 - 添加`coc`
