@@ -229,7 +229,7 @@ rm -rf fonts
 <details>
   <summary>这里提供一个我自己常用的nerd font（支持powerline）</summary>
 
-> [点击下载](https://cdn.jsdelivr.net/gh/ZGGSONG/vim/Fira%20Code%20Regular%20Nerd Font%20Complete.ttf)
+> [点击下载](https://cdn.jsdelivr.net/gh/ZGGSONG/vim/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf)
 
 </details>
 
