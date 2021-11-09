@@ -107,8 +107,6 @@ Plug 'junegunn/vim-easy-align'  "符号对齐
 Plug 'mattn/emmet-vim'  "HTML拓展
 Plug 'mhinz/vim-startify' "启动页面美化
 Plug 'jceb/vim-orgmode'	"vim版的emacs org mode
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'		"缩进线
 Plug 'itchyny/vim-cursorword'	"相同的单词高亮
 call plug#end()	
@@ -144,16 +142,6 @@ let NERDTreeShowLineNumbers=0
 let NERDTreeShowHidden=1
 " 显示书签列表
 let NERDTreeShowBookmarks=0
-
-"=============
-" fzf配置文件
-"=============
-" Empty value to disable preview window altogether
-let g:fzf_preview_window = ''
-" Always enable preview window on the right with 60% width
-let g:fzf_preview_window = 'right:60%'
-" Ctrl p显示查找内容
-nnoremap <silent> <c-p> :Files <CR>
 
 
 "===================
@@ -209,34 +197,3 @@ func SetTitle()
 	"新建文件后，自动定位到文件末尾
 endfunc 
 autocmd BufNewFile * normal G
-
-
-"===================================
-"===C,C++,java,python按F5编译运行===
-"===================================
-map <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-	exec "w"
-	if &filetype == 'c'
-		exec "!gcc % -o %<"
-		exec "!time ./%<"
-	elseif &filetype == 'cpp'
-		exec "!g++ % -std=c++11 -o %<"
-		exec "!time ./%<"
-	elseif &filetype == 'java' 
-		exec "!javac %" 
-		exec "!time java %<"
-	elseif &filetype == 'sh'
-		:!time bash %
-	elseif &filetype == 'python'
-		exec "!time python2.7 %"
-    elseif &filetype == 'html'
-        exec "!firefox % &"
-    elseif &filetype == 'go'
-"        exec "!go build %<"
-        exec "!time go run %"
-    elseif &filetype == 'mkd'
-        exec "!~/.vim/markdown.pl % > %.html &"
-        exec "!firefox %.html &"
-	endif
-endfunc
