@@ -56,6 +56,8 @@ noremap W 5w		"大写快速移动
 noremap B 5b		"大写快速移动
 noremap < <<		"取消缩进
 noremap > >>		"缩进
+noremap H ^			"快速行首
+noremap L g_		"快速行尾
 map S :w<CR>			"大写S保存
 map Q :q<CR>			"大写Q退出
 map R :source $MYVIMRC<CR>	"重新加载
@@ -106,7 +108,6 @@ Plug 'jiangmiao/auto-pairs' "自动括号补全
 Plug 'junegunn/vim-easy-align'  "符号对齐
 Plug 'mattn/emmet-vim'  "HTML拓展
 Plug 'mhinz/vim-startify' "启动页面美化
-Plug 'jceb/vim-orgmode'	"vim版的emacs org mode
 Plug 'Yggdroot/indentLine'		"缩进线
 Plug 'itchyny/vim-cursorword'	"相同的单词高亮
 call plug#end()	
