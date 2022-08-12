@@ -92,6 +92,7 @@ nmap <S-p> :bp<CR>
 "map tx :r !figlet 
 "placeholder
 map <LEADER><LEADER> <ESC>/<++><CR>:nohlsearch<CR>c4l
+inoremap jk <ESC> "退出输入模式
 
 "==============
 "===Plug插件===
