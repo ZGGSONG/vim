@@ -21,7 +21,7 @@ set number		"显示行号
 set ruler		"打开状态栏标尺
 set relativenumber	"以当前行号向上下递加
 set cursorline		"强调当前行
-set cursorcloumn		"强调当前列
+set cursorcolumn		"强调当前列
 set wrap		"字不会超出窗体
 set showcmd		"显示cmd命令
 set wildmenu 		"命令行提示
