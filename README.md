@@ -40,7 +40,7 @@ sudo apt install vim curl git
 ```
 ### 下载
 ```
-curl -fLo ~/.vimrc --create-dirs https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/vim
+curl -fLo ~/.vimrc --create-dirs https://cdn.jsdelivr.net/gh/ZGGSONG/vim@master/.vim_default
 ```
 ### 使用
 
