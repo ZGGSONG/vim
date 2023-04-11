@@ -243,6 +243,6 @@ ln -s ~/.vimrc .config/nvim/init.vim
 
 ## Author 作者
 
-**vim** © [zggsong](https://github.com/zggsong), Released under the [MIT](https://github.com/ZGGSONG/vim/blob/main/LICENSE) License.<br>
+**vim** © [zggsong](https://github.com/zggsong), Released under the [MIT](https://github.com/ZGGSONG/vim/blob/master/LICENSE) License.<br>
 
 > Website [Blog](https://www.zggsong.com) · GitHub [@zggsong](https://github.com/zggsong)
